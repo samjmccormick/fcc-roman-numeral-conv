@@ -60,7 +60,6 @@ button {
 	font-size: 1.5rem;
 	display: flex;
 	justify-content: center;
-	background-color: var(--red);
 	width: 500px;
 	margin: 10px auto;
 	border-radius: 10px;
@@ -68,6 +67,16 @@ button {
 
 .hide {
 	visibility: hidden;
+}
+
+.output {
+	background-color: var(--dark-purple);
+	font-size: 2.0rem;
+	font-weight: bold;
+}
+
+.invalid {
+	background-color: var(--red);
 }
 
 /* definition styling*/
