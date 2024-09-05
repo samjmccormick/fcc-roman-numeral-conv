@@ -63,6 +63,7 @@ button {
 	width: 500px;
 	margin: 10px auto;
 	border-radius: 10px;
+	padding: 10px 0px;
 }
 
 .hide {
@@ -79,5 +80,5 @@ button {
 	background-color: var(--red);
 }
 
-/* definition styling*/
+
 

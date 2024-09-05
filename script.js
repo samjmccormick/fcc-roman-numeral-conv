@@ -69,37 +69,51 @@ const numberToRomanNumeral = (input) => {
 	} 
 }
 
-console.log(numberToRomanNumeral(4));
-
-
-const checkUserInput = () => {
-	const num = Number(numberInput.value);
+const checkUserInput = (num) => {
 	
 	if (!num || isNaN(num) || !Number.isInteger(num)) {
-		output.classList.toggle("hide");
-		output.classList.toggle("invalid");
+		output.classList.add("invalid");
 		output.textContent = "Please enter a valid number";
 		return; 
 	} else if (num >= 4000) {
-		output.classList.toggle("hide");
-		output.classList.toggle("invalid");
+		output.classList.add("invalid");
 		output.textContent = "Please enter a number less than or equal to 3999";
 		return; 
 	} else if (num <= 0) {
-		output.classList.toggle("hide");
-		output.classList.toggle("invalid");
+		output.classList.add("invalid");
 		output.textContent = "Please enter a number greater than or equal to 1";
 		return; 
 	} else {
 		return true
 	}
+	
+	output.classList.remove("hide");
 }
 
-convertBtn.addEventListener("click", checkUserInput);
+const clear = () => {
+	output.innerText = '';
+	output.classList.remove("invalid");
+}
+
+const runProgram = () => {
+	const input = Number(numberInput.value);
+	
+	output.classList.remove("hide");
+	
+	clear();
+	
+	if (checkUserInput(input)) {
+		output.innerText = numberToRomanNumeral(input);
+		output.classList.add("output");
+	}
+	
+};
+
+convertBtn.addEventListener("click", runProgram);
 
 numberInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    checkUserInput();
+    runProgram();
   }
 }
 ); 
